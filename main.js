@@ -24,10 +24,6 @@ class Humburger {
         this.toppings = [];
     }
 
-    get Hamburger() {
-        this.order = new Set();
-    };
-
     addToppings(toping){
         if(!this.toppings.includes(toping)){
             return this.toppings.push(toping);
