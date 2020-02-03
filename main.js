@@ -53,14 +53,14 @@ class Humburger {
     }
 
     get calculateCalories(){
-        const caloriesArray = this.toppings.map( el => Humburger.TOPPING[el].price );
-        caloriesArray.push( Humburger.SIZE[this.size].calories, Humburger.STAFFING[this.staffing].calories );
+        const caloriesArray = this.toppings.map(el => Humburger.TOPPING[el].calories);
+        caloriesArray.push(Humburger.SIZE[this.size].calories, Humburger.STAFFING[this.staffing].calories);
         let calories = caloriesArray.reduce((accum, calories) => accum + calories, 0);
         return calories;
     }
     get calculatePrice(){
-        const priceArray = this.toppings.map( el => Humburger.TOPPING[el].price );
-        priceArray.push( Humburger.SIZE[this.size].price, Humburger.STAFFING[this.staffing].price );
+        const priceArray = this.toppings.map(el => Humburger.TOPPING[el].price);
+        priceArray.push(Humburger.SIZE[this.size].price, Humburger.STAFFING[this.staffing].price);
         let price = priceArray.reduce((accum, price) => accum + price, 0);
         return price;
     }
