@@ -119,6 +119,7 @@ class Humburger {
     ];
 }
 
+
 let humburger = new Humburger();
 humburger.addToppings(Humburger.TOPPING_SPICE);
 humburger.addToppings(Humburger.TOPPING_SPICE); // THIS TOPPING HAS ALREDY BEEN ADDED!
