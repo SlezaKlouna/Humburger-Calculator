@@ -119,7 +119,6 @@ class Humburger {
     ];
 }
 
-// let humburger = new Humburger(Humburger.LARGE_SIZE, Humburger.STAFFING_POTATO);
 let humburger = new Humburger();
 humburger.addToppings(Humburger.TOPPING_SPICE);
 humburger.addToppings(Humburger.TOPPING_SPICE); // THIS TOPPING HAS ALREDY BEEN ADDED!
