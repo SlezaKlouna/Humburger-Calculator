@@ -24,6 +24,10 @@ class Humburger {
         this.toppings = [];
     }
 
+    get Hamburger() {
+        this.order = new Set();
+    };
+
     addToppings(toping){
         if(!this.toppings.includes(toping)){
             return this.toppings.push(toping);
@@ -60,59 +64,63 @@ class Humburger {
         let price = priceArray.reduce((accum, price) => accum + price, 0);
         return price;
     }
+
+    static SIZE = {
+        SMALL_SIZE : 'SMALL_SIZE',
+        LARGE_SIZE : 'LARGE SIZE',
+    };
+
+    static STAFFINGS = {
+        STAFFING_CHEES : 'STAFFING CHEES',
+        STAFFING_SALAD : 'STAFFING SALAD',
+        STAFFING_POTATO : 'STAFFING POTATO'
+    };
+
+    static TOPPINGS = {
+        TOPPING_SPICE : 'TOPPING SPICE',
+        TOPPING_SAUCE : 'TOPPING SAUCE',
+    };
+
+    static HUMBURGER_VALUE = [
+        Humburger.SIZE = {
+            [Humburger.SMALL_SIZE] : {
+                price : 50,
+                calories : 20,
+            },
+            [Humburger.LARGE_SIZE] : {
+                price : 100,
+                calories: 40,
+            }
+        },
+        Humburger.STAFFING = {
+            [Humburger.STAFFING_CHEES] : {
+                price : 10,
+                calories : 20,
+            },
+            [Humburger.STAFFING_SALAD] : {
+                price : 20,
+                calories: 5,
+            },
+            [Humburger.STAFFING_POTATO] : {
+                price : 15,
+                calories : 10,
+            }
+        },
+        Humburger.TOPPING = {
+            [Humburger.TOPPING_SPICE] : {
+                price : 15,
+                calories : 0,
+            },
+            [Humburger.TOPPING_SAUCE] : {
+                price : 20,
+                calories: 5,
+            }
+        },
+    ];
 }
 
-// SIZES
-Humburger.SMALL_SIZE = 'SMALL_SIZE';
-Humburger.LARGE_SIZE = 'LARGE SIZE';
-
-Humburger.SIZE = {
-    [Humburger.SMALL_SIZE] : {
-        price : 50,
-        calories : 20,
-    },
-    [Humburger.LARGE_SIZE] : {
-        price : 100,
-        calories: 40,
-    }
-}
-
-// STAFFINGS
-Humburger.STAFFING_CHEES = 'STAFFING CHEES';
-Humburger.STAFFING_SALAD = 'STAFFING SALAD';
-Humburger.STAFFING_POTATO = 'STAFFING POTATO';
-
-Humburger.STAFFING = {
-    [Humburger.STAFFING_CHEES] : {
-        price : 10,
-        calories : 20,
-    },
-    [Humburger.STAFFING_SALAD] : {
-        price : 20,
-        calories: 5,
-    },
-    [Humburger.STAFFING_POTATO] : {
-        price : 15,
-        calories : 10,
-    }
-}
-
-// TOPPINGS
-Humburger.TOPPING_SPICE = 'TOPPING SPICE';
-Humburger.TOPPING_SAUCE = 'TOPPING SAUCE';
-
-Humburger.TOPPING = {
-    [Humburger.TOPPING_SPICE] : {
-        price : 15,
-        calories : 0,
-    },
-    [Humburger.TOPPING_SAUCE] : {
-        price : 20,
-        calories: 5,
-    }
-}
-
-let humburger = new Humburger(Humburger.LARGE_SIZE, Humburger.STAFFING_POTATO);
+// let humburger = new Humburger(Humburger.LARGE_SIZE, Humburger.STAFFING_POTATO);
+let humburger = new Humburger();
 humburger.addToppings(Humburger.TOPPING_SPICE);
 humburger.addToppings(Humburger.TOPPING_SPICE); // THIS TOPPING HAS ALREDY BEEN ADDED!
 
